@@ -1,0 +1,5 @@
+.card { overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+.cover { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.info { display: grid; gap: 8px; padding: 12px; }
+.title { font-weight: 700; }
+.meta { color: var(--muted); font-size: 14px; }

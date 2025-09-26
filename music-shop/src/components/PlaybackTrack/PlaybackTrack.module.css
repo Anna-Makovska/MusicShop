@@ -1,0 +1,7 @@
+.bar { position: fixed; left: 0; right: 0; bottom: 0; background: rgba(13,13,18,.9); border-top: 1px solid #22232b; backdrop-filter: blur(10px); }
+.inner { max-width: 1280px; margin: 0 auto; padding: 10px 16px; display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 16px; }
+.now { color: var(--muted); }
+.controls { display: flex; gap: 8px; }
+.btn { height: 36px; padding: 0 12px; border-radius: 10px; background: #1a1b22; border: 1px solid #2a2b34; color: var(--text); }
+.timer { color: var(--muted); font-size: 14px; }
+@media (max-width: 560px) { .inner { grid-template-columns: 1fr; } .timer { justify-self: start; } }

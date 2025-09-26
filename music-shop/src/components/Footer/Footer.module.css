@@ -1,0 +1,4 @@
+.foot { padding: 24px 0 120px; color: var(--muted); }
+.row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 16px; }
+.links { display: flex; gap: 12px; }
+@media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
