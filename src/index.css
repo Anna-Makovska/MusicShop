@@ -1,0 +1,76 @@
+:root {
+	--bg: #0b0b0f;
+	--card: #15151c;
+	--text: #f5f5f7;
+	--muted: #a8a8b3;
+	--accent: #6e56cf;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@72..144,700&display=swap");
+
+html {
+	scroll-behavior: smooth;
+}
+
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: Inter, system-ui, Arial, sans-serif;
+	color: var(--text);
+	background: radial-gradient(1200px 700px at 10% -10%, #1b1b22 10%, #0b0b0f 60%), var(--bg);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 16px;
+}
+
+.grid {
+	display: grid;
+	gap: 16px;
+}
+
+.card {
+	background: var(--card);
+	border: 1px solid #22232b;
+	border-radius: 16px;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 12px;
+	padding: 10px 16px;
+	background: var(--accent);
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+.sectionTitle {
+	font-size: 22px;
+	margin: 0 0 12px;
+}
+

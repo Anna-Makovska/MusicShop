@@ -1,0 +1,38 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: rgba(12,12,16,.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 20px;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover { opacity: 0.85; }
+
+.record {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #1a1a1a 0 40%, #d9a441 41% 42%, #1a1a1a 43% 100%),
+    repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,.08) 0 1px, rgba(255,255,255,0) 1px 3px);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.6), 0 1px 3px rgba(0,0,0,.4);
+}

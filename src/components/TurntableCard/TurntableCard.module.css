@@ -1,0 +1,48 @@
+.card {
+	background: #1a1a20;
+	border: 1px solid #24242c;
+	border-radius: 14px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+	transition: transform .25s ease
+}
+
+.card:hover {
+	transform: translateY(-6px)
+}
+
+.cover {
+	width: 100%;
+	aspect-ratio: 4/3;
+	object-fit: cover;
+	display: block
+}
+
+.body {
+	padding: 14px;
+	display: grid;
+	gap: 6px;
+	text-align: left
+}
+
+.model {
+	color: #fff;
+	font-weight: 700;
+	font-size: 18px
+}
+
+.desc {
+	color: #a9a9b4;
+	font-size: 14px
+}
+
+.price {
+	margin-top: 6px;
+	font-weight: 800;
+	color: #f4f1ee;
+	background: linear-gradient(90deg, #f4f1ee, #e7dccb);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent
+}
