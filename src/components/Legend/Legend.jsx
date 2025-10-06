@@ -22,7 +22,7 @@ export default function Legend() {
   return (
     <section className={styles.legend}>
       <video className={styles.video} autoPlay muted loop playsInline>
-        <source src="/video/vinyl-turntable.mp4" type="video/mp4" />
+        <source src="/MusicShop/video/vinyl-turntable.mp4" type="video/mp4" />
       </video>
       <div className={styles.overlay} />
       <div className={styles.grain} />
