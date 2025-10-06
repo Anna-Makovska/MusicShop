@@ -1,10 +1,5 @@
 <h1 align="center">🎧 MusicShop</h1>
 
-<p align="center">
-  <a href="https://anna-makovska.github.io/MusicShop/" target="_blank">🔗 Live Demo</a> •
-  <a href="https://github.com/Anna-Makovska/MusicShop" target="_blank">💻 View Code</a>
-</p>
-
 ---
 
 ## 🧠 About the Project
