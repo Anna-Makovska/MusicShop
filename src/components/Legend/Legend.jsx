@@ -1,36 +1,41 @@
-
 import { useEffect } from "react"
 import { motion, useAnimation } from "framer-motion"
 import styles from "./Legend.module.css"
+import turntable from "../../assets/video/vinyl-turntable.mp4"
 
 export default function Legend() {
   const controls = useAnimation()
 
   useEffect(() => {
-    if (sessionStorage.getItem('moodSeen') === '1') {
+    const show = () => {
       controls.start({ x: 0, opacity: 1, transition: { duration: 1.2, ease: "easeOut" } })
+    }
+
+    if (sessionStorage.getItem("moodSeen") === "1") {
+      show()
       return
     }
 
-    const onOpened = () => {
-      controls.start({ x: 0, opacity: 1, transition: { duration: 1.2, ease: "easeOut" } })
+    const onOpened = () => show()
+    const onClosed = () => show()
+
+    window.addEventListener("mood-modal:opened", onOpened)
+    window.addEventListener("mood-modal:closed", onClosed)
+
+    return () => {
+      window.removeEventListener("mood-modal:opened", onOpened)
+      window.removeEventListener("mood-modal:closed", onClosed)
     }
-    window.addEventListener('mood-modal:opened', onOpened, { once: true })
-    return () => window.removeEventListener('mood-modal:opened', onOpened)
   }, [controls])
 
   return (
     <section className={styles.legend}>
-      <video className={styles.video} autoPlay muted loop playsInline>
-        <source src="/MusicShop/video/vinyl-turntable.mp4" type="video/mp4" />
+      <video className={styles.video} autoPlay muted loop playsInline preload="metadata">
+        <source src={turntable} type="video/mp4" />
       </video>
       <div className={styles.overlay} />
       <div className={styles.grain} />
-      <motion.div
-        className={styles.caption}
-        initial={{ x: -80, opacity: 0 }}
-        animate={controls}
-      >
+      <motion.div className={styles.caption} initial={{ x: -80, opacity: 0 }} animate={controls}>
         <p className={styles.eyebrow}>Discover</p>
         <h1 className={styles.heading}>Music that perfectly fits your soul</h1>
         <ul className={styles.tags}>
