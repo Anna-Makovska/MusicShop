@@ -1,16 +1,16 @@
-import styles from "./TrendingNowCard.module.css";
+import styles from './TrendingNowCard.module.css'
+import { player } from '../../player/player'
 
 export default function TrendingNowCard({ item }) {
+  function onPlay() { player.play(item) }
   return (
-    <article className={`card ${styles.card}`}>
-      <img className={styles.cover} src={item.cover} alt={item.title} />
+    <article className={styles.card}>
+      <img className={styles.cover} src={item.cover} alt={`${item.artist} – ${item.title}`} />
       <div className={styles.info}>
-        <div className={styles.title}>{item.title}</div>
-        <div className={styles.meta}>
-          {item.artist} • {item.duration}
-        </div>
-        <button className="btn">Play</button>
+        <h3 className={styles.name}>{item.title}</h3>
+        <p className={styles.meta}>{item.artist} • {item.duration}</p>
+        <button className={styles.btn} onClick={onPlay}>Play</button>
       </div>
     </article>
-  );
+  )
 }

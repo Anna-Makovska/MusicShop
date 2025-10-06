@@ -1,5 +1,0 @@
-.shell { display: grid; grid-template-rows: auto 1fr auto; min-height: 100svh; }
-.main { display: grid; grid-template-columns: 260px 1fr; gap: 20px; width: 100%; max-width: 1280px; padding: 20px 16px 120px; margin: 0 auto; }
-.side { position: sticky; top: 16px; height: fit-content; }
-.content { display: grid; gap: 24px; }
-@media (max-width: 900px) { .main { grid-template-columns: 1fr; } .side { order: 2; } }

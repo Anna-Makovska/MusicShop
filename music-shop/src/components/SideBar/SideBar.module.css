@@ -1,6 +1,0 @@
-css
-.side { position: sticky; top: 76px; display: grid; gap: 8px; padding: 16px; border-radius: 16px; background: var(--card); border: 1px solid #22232b; }
-.title { font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; }
-.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.list a { display: block; padding: 10px 12px; border-radius: 12px; color: var(--text); background: #14141b; border: 1px solid #22232b; }
-.list a:hover { background: #191a22; }

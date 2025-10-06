@@ -1,19 +1,35 @@
-import styles from "./NavBar.module.css";
+import styles from "./NavBar.module.css"
+import { Link } from "react-router-dom"
 
 export default function NavBar() {
   return (
     <header className={styles.bar}>
-      <div className="container">
+      <div className={styles.border} />
+      <div className={styles.container}>
         <div className={styles.row}>
-          <div className={styles.brand}>MusicShop</div>
+          <a href="/" className={styles.brand}>
+  <span className={styles.record} /> MusicShop
+</a>
+
           <nav className={styles.nav}>
-            <a href="#trending">Trending</a>
-            <a href="#genres">Genres</a>
-            <a href="#popular">Popular</a>
+            <a href="#trending" className={styles.link}>Trending</a>
+            <a href="#genres" className={styles.link}>Genres</a>
+            <a href="#turntables" className={styles.link}>Turntables</a>
           </nav>
-          <button className="btn">Sign In</button>
+
+          <Link to="/login" className={styles.btn}>Sign In</Link>
+
+          <details className={styles.menu}>
+            <summary className={styles.burger} aria-label="Menu" />
+            <div className={styles.drawer}>
+              <a href="#trending" className={styles.drawerLink}>Trending</a>
+              <a href="#genres" className={styles.drawerLink}>Genres</a>
+              <a href="#popular" className={styles.drawerLink}>Popular</a>
+              <a href="#signin" className={styles.drawerBtn}>Sign In</a>
+            </div>
+          </details>
         </div>
       </div>
     </header>
-  );
+  )
 }

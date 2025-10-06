@@ -1,32 +1,41 @@
-import styles from "./App.module.css";
-import NavBar from "./components/NavBar/NavBar";
-import SideBar from "./components/SideBar/SideBar";
-import SearchBar from "./components/SearchBar/SearchBar";
-import PopularGenres from "./components/PopularGenres/PopularGenres";
-import PopularTracks from "./components/PopularTracks/PopularTracks";
-import TrendingNow from "./components/TrendingNow/TrendingNow";
-import PlaybackTrack from "./components/PlaybackTrack/PlaybackTrack";
-import Legend from "./components/Legend/Legend";
-import Footer from "./components/Footer/Footer";
+import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
+import { useState } from "react"
+import Landing from "./pages/Landing/Landing"
+import Login from "./pages/Login/Login"
+import Register from "./pages/Register/Register"
+import Dashboard from "./pages/Dashboard/Dashboard"
+
+function ProtectedRoute({ children, isAuthed }) {
+  return isAuthed ? children : <Navigate to="/login" replace />
+}
+
+function AppRouter() {
+  const [isAuthed, setIsAuthed] = useState(false)
+
+  return (
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/login" element={<Login onLogin={() => setIsAuthed(true)} />} />
+      <Route path="/register" element={<Register />} />
+
+      <Route
+        path="/app"
+        element={
+          <ProtectedRoute isAuthed={isAuthed}>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  )
+}
 
 export default function App() {
   return (
-    <div className={styles.shell}>
-      <NavBar />
-      <Legend />
-      <main className={styles.main}>
-        <aside className={styles.side}>
-          <SideBar />
-        </aside>
-        <section className={styles.content}>
-          <SearchBar />
-          <TrendingNow />
-          <PopularGenres />
-          <PopularTracks />
-        </section>
-      </main>
-      <PlaybackTrack />
-      <Footer />
-    </div>
-  );
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
+  )
 }

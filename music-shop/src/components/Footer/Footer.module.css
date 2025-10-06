@@ -1,4 +1,14 @@
-.foot { padding: 24px 0 120px; color: var(--muted); }
-.row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 16px; }
-.links { display: flex; gap: 12px; }
-@media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
+.foot {
+  padding: 28px 0 90px;
+  background: linear-gradient(180deg, #1a1410 0%, #0b0b10 100%);
+  color: #c9b89e;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  transition: color 0.3s ease;
+}
+
+.foot:hover {
+  color: #e3b653;
+}

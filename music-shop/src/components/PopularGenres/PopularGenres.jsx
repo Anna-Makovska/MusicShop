@@ -1,16 +1,20 @@
-import styles from "./PopularGenres.module.css";
-import { genres } from "../../data/tracks";
-import GenreCard from "../GenreCard/GenreCard";
+import styles from './PopularGenres.module.css'
+import { genres } from '../../data/tracks'
+import GenreBadge from '../GenreBadge/GenreBadge'
 
 export default function PopularGenres() {
   return (
-    <section id="genres" className="grid">
-      <h2 className="sectionTitle">Popular Genres</h2>
-      <div className={styles.row}>
-        {genres.map((item) => (
-          <GenreCard key={item.id} item={item} />
+    <section id="genres" className={styles.section}>
+      <div className={styles.head}>
+        <h2 className={styles.title}>Popular Genres</h2>
+        <p className={styles.lead}>Warm vintage moods for every taste</p>
+      </div>
+
+      <div className={styles.grid}>
+        {genres.map((g) => (
+          <GenreBadge key={g.id} item={g} size={ 'md'} />
         ))}
       </div>
     </section>
-  );
+  )
 }
