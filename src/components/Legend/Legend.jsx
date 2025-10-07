@@ -1,9 +1,10 @@
 import { useEffect } from "react"
 import { motion, useAnimation } from "framer-motion"
 import styles from "./Legend.module.css"
-import turntable from "../../assets/video/vinyl-turntable.mp4"
 
 export default function Legend() {
+  const videoUrl = `${import.meta.env.BASE_URL}video/vinyl-turntable.mp4`
+
   const controls = useAnimation()
 
   useEffect(() => {
@@ -31,7 +32,7 @@ export default function Legend() {
   return (
     <section className={styles.legend}>
       <video className={styles.video} autoPlay muted loop playsInline preload="metadata">
-        <source src={turntable} type="video/mp4" />
+        <source src={videoUrl} type="video/mp4" />
       </video>
       <div className={styles.overlay} />
       <div className={styles.grain} />
